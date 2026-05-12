@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:id="@+id/bannerCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:background="@drawable/bg_banner_1">
+
+        <!-- Small badge above title -->
+        <TextView
+            android:id="@+id/tvBannerBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIMITED TIME"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:background="@drawable/bg_discount_badge"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Main headline -->
+        <TextView
+            android:id="@+id/tvBannerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fresh Deals Up To 60% Off"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:lineSpacingExtra="-2dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvBannerSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On fruits, veggies &amp; daily essentials"
+            android:textColor="#E0FFFFFF"
+            android:textSize="13sp"
+            android:layout_marginTop="4dp" />
+
+        <!-- CTA text -->
+        <TextView
+            android:id="@+id/tvBannerCta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Now →"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_discount_badge"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp" />
+
+    </LinearLayout>
+
+    <!-- Large emoji / icon overlaid on right side -->
+    <TextView
+        android:id="@+id/tvBannerEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:text="🛒"
+        android:textSize="64sp"
+        android:layout_marginEnd="30dp"
+        android:alpha="0.3" />
+
+</FrameLayout>

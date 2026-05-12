@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Orange juice glass icon for Beverage products -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Glass body -->
+    <path android:fillColor="#FFF9C4"
+        android:pathData="M6,2l1.5,18h9L18,2H6z"/>
+    <!-- Orange juice fill inside glass -->
+    <path android:fillColor="#FF6F00"
+        android:pathData="M7,8l0.9,12H16.1L17,8H7z"/>
+    <!-- Glass rim highlight -->
+    <path android:fillColor="#F57F17"
+        android:pathData="M6,2h12v2H6z"/>
+    <!-- Straw -->
+    <path android:fillColor="#4CAF50"
+        android:strokeWidth="1.5"
+        android:strokeColor="#4CAF50"
+        android:pathData="M14,2L12,8"/>
+    <!-- Straw top circle -->
+    <path android:fillColor="#4CAF50"
+        android:pathData="M14,2m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0"/>
+    <!-- Bubbles inside juice -->
+    <path android:fillColor="#FFCC80"
+        android:pathData="M10,12m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0"/>
+    <path android:fillColor="#FFCC80"
+        android:pathData="M13,15m-0.8,0a0.8,0.8 0,1 1,1.6 0a0.8,0.8 0,1 1,-1.6 0"/>
+</vector>

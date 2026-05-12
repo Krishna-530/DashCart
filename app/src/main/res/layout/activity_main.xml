@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    MainActivity now just redirects to LoginActivity immediately.
+    This layout is a simple placeholder — it flashes for < 1 frame.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_grocery_logo"
+        android:contentDescription="Loading" />
+
+</LinearLayout>

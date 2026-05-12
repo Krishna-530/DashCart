@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ── Brand (brighter for dark backgrounds) ── -->
+    <color name="colorPrimary">#10B981</color>
+    <color name="colorPrimaryDark">#059669</color>
+    <color name="colorAccent">#FCD34D</color>
+
+    <!-- ── Zepto/Swiggy dark mode backgrounds ── -->
+    <color name="screenBackground">#0F0F0F</color>   <!-- True dark for OLED -->
+    <color name="cardBackground">#1C1C1E</color>     <!-- iOS-style dark card -->
+    <color name="imageBackground">#2C2C2E</color>    <!-- Dark image zone -->
+
+    <!-- ── Text ── -->
+    <color name="textPrimary">#F5F5F7</color>        <!-- Off-white -->
+    <color name="textSecondary">#8E8E93</color>      <!-- Mid-grey -->
+
+    <!-- ── Borders ── -->
+    <color name="divider">#38383A</color>
+    <color name="chipBorder">#48484A</color>
+
+    <!-- ── Standard ── -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="error">#F87171</color>
+    <color name="colorError">#F87171</color>
+    <color name="btnRemove">#3B1010</color>
+
+    <!-- ── Add button ── -->
+    <color name="addBtnBg">#2C2C2E</color>
+    <color name="addBtnText">#10B981</color>
+</resources>

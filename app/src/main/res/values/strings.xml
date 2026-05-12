@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GroceryApp</string>
+    <string name="login_title">Welcome Back!</string>
+    <string name="login_subtitle">Login to order fresh groceries</string>
+    <string name="enter_mobile">Enter Mobile Number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="verify_login">Verify &amp; Login</string>
+    <string name="otp_sent">OTP sent! Use 1234 to login.</string>
+
+    <string name="home_title">GroceryApp 🛒</string>
+    <string name="search_hint">Search products…</string>
+    <string name="cart">Cart</string>
+    <string name="add_to_cart">Add</string>
+
+    <string name="cart_title">My Cart</string>
+    <string name="cart_empty">Your cart is empty!</string>
+    <string name="proceed_checkout">Proceed to Checkout</string>
+    <string name="total">Total:</string>
+
+    <string name="checkout_title">Checkout</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="address_hint">Enter your full delivery address…</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="cod">Cash on Delivery</string>
+    <string name="online_payment">Online Payment (UPI / Card)</string>
+    <string name="place_order">Place Order</string>
+
+    <string name="order_success_title">Order Placed! 🎉</string>
+    <string name="order_success_msg">Your order has been placed successfully.</string>
+    <string name="estimated_delivery">Estimated Delivery: 10–15 mins</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="order_summary">Order Summary</string>
+</resources>

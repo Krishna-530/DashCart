@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_sidebar_category.xml
+    One row in the navigation drawer category list.
+    Shows: emoji icon | category name | green active indicator bar on right.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootSidebarCategory"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="0dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Emoji icon -->
+    <TextView
+        android:id="@+id/tvCategoryEmoji"
+        android:layout_width="28dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <!-- Category name -->
+    <TextView
+        android:id="@+id/tvSidebarCategoryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:textColor="@color/textPrimary"
+        android:layout_marginStart="14dp" />
+
+    <!-- Right-side green bar for selected item -->
+    <View
+        android:id="@+id/vSelectedIndicator"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:visibility="gone" />
+
+</LinearLayout>

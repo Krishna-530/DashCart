@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screenBackground">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:title="Track Your Order"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ── Feature 3: Simulated Map Tracking ── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMap"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#F5F5F5">
+
+                    <!-- Simulated Grid Background (Map Feel) -->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_search"
+                        android:alpha="0.05"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Store Icon -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏪"
+                        android:textSize="24sp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="30dp" />
+
+                    <!-- Home Icon -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏠"
+                        android:textSize="24sp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="30dp" />
+
+                    <!-- Path Line -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#E0E0E0"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginEnd="60dp" />
+
+                    <!-- Moving Rider -->
+                    <LinearLayout
+                        android:id="@+id/llRiderMarker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="60dp"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🛵 Rahul"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:background="@drawable/bg_badge"
+                            android:paddingHorizontal="4dp"
+                            android:paddingVertical="1dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🛵"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+                    
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottiePacking"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/splash_animation"
+                        android:visibility="visible" />
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Order ID Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardBackground">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:id="@+id/tvOrderId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order #GR00000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+                    <TextView
+                        android:id="@+id/tvDriverInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🛵  Rahul Kumar — +91 98765 43210"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tracking Stages Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Status"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Stage 0 — Order Placed -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon0" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="Order Placed" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub0" android:text="We received your order" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="2dp" android:layout_height="20dp" android:layout_marginStart="13dp" android:background="@color/colorPrimary"/>
+
+                    <!-- Stage 1 — Confirmed -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon1" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="Order Confirmed" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub1" android:text="Store accepted your order" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="2dp" android:layout_height="20dp" android:layout_marginStart="13dp" android:background="@color/divider"/>
+
+                    <!-- Stage 2 — Packed -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon2" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="Being Packed" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub2" android:text="Items are being packed" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="2dp" android:layout_height="20dp" android:layout_marginStart="13dp" android:background="@color/divider"/>
+
+                    <!-- Stage 3 — Picked Up -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon3" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="Driver Picked Up" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub3" android:text="Rahul has your order" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="2dp" android:layout_height="20dp" android:layout_marginStart="13dp" android:background="@color/divider"/>
+
+                    <!-- Stage 4 — On the Way -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon4" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="On the Way 🛵" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub4" android:text="Rahul is heading to you" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                    <View android:layout_width="2dp" android:layout_height="20dp" android:layout_marginStart="13dp" android:background="@color/divider"/>
+
+                    <!-- Stage 5 — Delivered -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:id="@+id/icon5" android:layout_width="28dp" android:layout_height="28dp" android:text="⏳" android:gravity="center" android:textSize="18sp"/>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="12dp">
+                            <TextView android:text="Delivered 🎉" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/sub5" android:text="Enjoy your groceries!" android:textSize="12sp" android:textColor="@color/textSecondary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                        <TextView android:id="@+id/time5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11sp" android:textColor="@color/textSecondary"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Status label -->
+            <TextView
+                android:id="@+id/tvCurrentStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="📦 Processing your order…"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@color/cardBackground" />
+
+            <!-- Back to Home button (shown after delivery) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackHome"
+                style="@style/GreenButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:text="🏪 Back to Shopping"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

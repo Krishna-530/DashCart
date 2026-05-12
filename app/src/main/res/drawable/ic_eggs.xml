@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Egg icon for Dairy / Eggs products -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Egg white body — egg shape approximated with an oval shifted upward -->
+    <path android:fillColor="#FFF9C4"
+        android:pathData="M12,2C8.5,2 5,6 5,11c0,4.97 3.13,9 7,9s7,-4.03 7,-9C19,6 15.5,2 12,2z"/>
+    <!-- Egg yolk circle -->
+    <path android:fillColor="#FF8F00"
+        android:pathData="M12,9m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"/>
+    <!-- Egg white outline -->
+    <path android:fillColor="@android:color/transparent"
+        android:strokeColor="#F9A825"
+        android:strokeWidth="0.8"
+        android:pathData="M12,2C8.5,2 5,6 5,11c0,4.97 3.13,9 7,9s7,-4.03 7,-9C19,6 15.5,2 12,2z"/>
+</vector>

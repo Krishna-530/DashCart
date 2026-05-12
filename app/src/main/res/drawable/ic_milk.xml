@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Milk carton icon for Dairy products -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Carton body -->
+    <path android:fillColor="#1565C0"
+        android:pathData="M17.5,2.5l-1,-1.5H7.5L6.5,2.5 5,4v16c0,1.1 0.9,2 2,2h10c1.1,0 2,-0.9 2,-2V4l-1.5,-1.5z"/>
+    <!-- White milk label area -->
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M8,7h8v8H8z"/>
+    <!-- Blue "MILK" wave lines -->
+    <path android:fillColor="#1565C0"
+        android:pathData="M9,9.5q1,-1 2,0t2,0t2,0"/>
+    <path android:fillColor="#1565C0"
+        android:pathData="M9,11.5q1,-1 2,0t2,0t2,0"/>
+    <!-- White roof triangle of carton -->
+    <path android:fillColor="#BBDEFB"
+        android:pathData="M7.5,2.5h9L18,4H6z"/>
+</vector>
