@@ -1,4 +1,4 @@
-# FreshGo Grocery App - Kotlin Assignment
+# DashCart - Kotlin Grocery App
 
 This is a mini grocery delivery application built as part of the Kotlin Android assignment. The app is inspired by Blinkit/Swiggy Instamart and includes features like product browsing, cart management, and order tracking.
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GroceryApp</string>
+    <string name="app_name">DashCart</string>
     <string name="login_title">Welcome Back!</string>
     <string name="login_subtitle">Login to order fresh groceries</string>
     <string name="enter_mobile">Enter Mobile Number</string>
@@ -9,7 +9,7 @@
     <string name="verify_login">Verify &amp; Login</string>
     <string name="otp_sent">OTP sent! Use 1234 to login.</string>
 
-    <string name="home_title">GroceryApp 🛒</string>
+    <string name="home_title">DashCart 🛒</string>
     <string name="search_hint">Search products…</string>
     <string name="cart">Cart</string>
     <string name="add_to_cart">Add</string>

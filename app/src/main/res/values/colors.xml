@@ -4,15 +4,19 @@
     <color name="colorPrimary">#0C831F</color>      <!-- Swiggy Instamart-like deep green -->
     <color name="colorPrimaryDark">#096517</color>
     <color name="colorAccent">#F8C51B</color>        <!-- Yellow highlight accent -->
+    <color name="primary_green">#0C831F</color>      <!-- Added for notifications -->
 
     <!-- ── Backgrounds ── -->
     <color name="screenBackground">#F0F0F5</color>   <!-- Very light cool grey for screen bg -->
     <color name="cardBackground">#FFFFFF</color>     <!-- Pure white cards -->
     <color name="imageBackground">#F8F9FA</color>    <!-- Near-white image zone -->
+    <color name="bg_light">#F9FAFB</color>           <!-- Added for notifications -->
 
     <!-- ── Text ── -->
     <color name="textPrimary">#1C1C1E</color>        <!-- Near-black — iOS-style for crispness -->
     <color name="textSecondary">#6E6E73</color>      <!-- Mid-grey subtitles / labels -->
+    <color name="text_black">#111827</color>         <!-- Added for notifications -->
+    <color name="text_grey">#6B7280</color>          <!-- Added for notifications -->
 
     <!-- ── Borders ── -->
     <color name="divider">#E5E5EA</color>            <!-- Hairline dividers -->

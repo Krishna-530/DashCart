@@ -34,6 +34,8 @@ import com.example.myapplication.ui.ProductBottomSheetFragment
 import com.example.myapplication.utils.CartManager
 import com.example.myapplication.utils.DummyData
 import com.example.myapplication.viewmodel.HomeViewModel
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -47,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
     // ── Horizontal swipe adapters (Swiggy-style cards) ───────────────────
     private lateinit var quickAddAdapter: HorizontalProductAdapter
     private lateinit var mostShoppedAdapter: HorizontalProductAdapter
-    private var newlyAddedAdapter: HorizontalProductAdapter
+    private lateinit var newlyAddedAdapter: HorizontalProductAdapter
     private lateinit var highestDiscountAdapter: HorizontalProductAdapter
     private lateinit var buyItAgainAdapter: HorizontalProductAdapter
 
@@ -56,8 +58,6 @@ class HomeActivity : AppCompatActivity() {
 
     // ── Navigation ───────────────────────────────────────────────────────
     private lateinit var sidebarAdapter: SidebarCategoryAdapter
-    private lateinit var categoryChipAdapter: CategoryAdapter
-    private lateinit var dietaryTagAdapter: com.example.myapplication.adapter.DietaryTagAdapter
     private lateinit var drawerToggle: ActionBarDrawerToggle
 
     // ── Banner auto-scroll ───────────────────────────────────────────────
@@ -72,12 +72,11 @@ class HomeActivity : AppCompatActivity() {
 
         setupToolbar()
         setupDrawer()
-        setupCategoryChips()
+        setupDrawer()
         setupBannerCarousel()
         setupCategoryGrid()
         setupRecyclerViews()
         setupSearchBar()
-        setupDietaryTags()
         observeViewModel()
         loadOrderHistoryForPredictiveShopping()
 
@@ -148,19 +147,9 @@ class HomeActivity : AppCompatActivity() {
         binding.ivCart.setOnClickListener {
             startActivity(Intent(this, CartActivity::class.java))
         }
-        binding.ivProfile.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
-
         binding.flNotification.setOnClickListener {
             startActivity(Intent(this, NotificationActivity::class.java))
         }
-
-        // Load a professional avatar image
-        Glide.with(this)
-            .load("https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop")
-            .placeholder(R.drawable.ic_profile_placeholder)
-            .into(binding.ivProfile)
 
         // Floating Cart Strip click
         binding.layoutCartStrip.cardCartStrip.setOnClickListener {
@@ -208,32 +197,6 @@ class HomeActivity : AppCompatActivity() {
         binding.rvSidebarCategories.apply {
             layoutManager = LinearLayoutManager(this@HomeActivity)
             adapter = sidebarAdapter
-        }
-    }
-
-    // ── Inline category chip strip ─────────────────────────────────────────
-    private fun setupCategoryChips() {
-        val categories = DummyData.getCategories()
-        categoryChipAdapter = CategoryAdapter(categories) { selectedCategory ->
-            applyCategory(selectedCategory)
-        }
-        binding.rvCategoryChips.apply {
-            layoutManager = LinearLayoutManager(
-                this@HomeActivity, LinearLayoutManager.HORIZONTAL, false
-            )
-            adapter = categoryChipAdapter
-        }
-    }
-
-    // ── Feature 7: Dietary Tags ──────────────────────────────────────────
-    private fun setupDietaryTags() {
-        val tags = listOf("All", "Organic", "Vegan", "Keto", "Healthy")
-        dietaryTagAdapter = com.example.myapplication.adapter.DietaryTagAdapter(tags) { selectedTag ->
-            viewModel.onDietaryTagSelected(selectedTag)
-        }
-        binding.rvDietaryTags.apply {
-            layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
-            adapter = dietaryTagAdapter
         }
     }
 
@@ -639,7 +602,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun loadOrderHistoryForPredictiveShopping() {
-        androidx.lifecycle.lifecycleScope.launchWhenStarted {
+        lifecycleScope.launch {
             val db = com.example.myapplication.db.AppDatabase.getInstance(this@HomeActivity)
             val orders = db.orderDao().getAllOrders() 
             

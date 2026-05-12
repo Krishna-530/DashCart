@@ -39,6 +39,7 @@ class CartActivity : AppCompatActivity() {
     private val viewModel: CartViewModel by viewModels()
     private lateinit var cartAdapter: CartAdapter
     private lateinit var quickAddAdapter: HorizontalProductAdapter
+    private lateinit var couponAdapter: com.example.myapplication.adapter.CouponAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +53,7 @@ class CartActivity : AppCompatActivity() {
         observeViewModel()
         setupCheckoutButton()
         setupCouponAndPayment()
+        setupAvailableCoupons()
     }
 
     private fun setupToolbar() {
@@ -244,6 +246,21 @@ class CartActivity : AppCompatActivity() {
                     Toast.makeText(this, "Invalid coupon code", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun setupAvailableCoupons() {
+        val availableCodes = listOf("SAVE50", "FRESH100", "WELCOME")
+        couponAdapter = com.example.myapplication.adapter.CouponAdapter(availableCodes) { code ->
+            binding.etCouponCode.setText(code)
+            val success = viewModel.applyCoupon(code)
+            if (success) {
+                Toast.makeText(this, "🎟️ Coupon Applied! Discount added.", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.rvAvailableCoupons.apply {
+            layoutManager = LinearLayoutManager(this@CartActivity, LinearLayoutManager.HORIZONTAL, false)
+            adapter = couponAdapter
         }
     }
 

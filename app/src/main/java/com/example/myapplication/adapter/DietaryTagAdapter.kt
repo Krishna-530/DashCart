@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.databinding.ItemCategoryChipBinding
+import com.example.myapplication.databinding.ItemCategoryBinding
 
 /**
  * Adapter for dietary filters (Vegan, Keto, Organic, etc.)
@@ -17,11 +17,11 @@ class DietaryTagAdapter(
 
     private var selectedPosition = 0
 
-    inner class TagViewHolder(val binding: ItemCategoryChipBinding) : 
+    inner class TagViewHolder(val binding: ItemCategoryBinding) : 
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TagViewHolder {
-        val binding = ItemCategoryChipBinding.inflate(
+        val binding = ItemCategoryBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return TagViewHolder(binding)
@@ -29,19 +29,20 @@ class DietaryTagAdapter(
 
     override fun onBindViewHolder(holder: TagViewHolder, position: Int) {
         val tag = tags[position]
-        holder.binding.tvCategoryName.text = tag
+        holder.binding.tvCategoryLabel.text = tag
+        holder.binding.tvCategoryEmoji.visibility = android.view.View.GONE
         
         val isSelected = position == selectedPosition
         
         if (isSelected) {
-            holder.binding.root.setBackgroundResource(R.drawable.bg_category_selected)
-            holder.binding.tvCategoryName.setTextColor(Color.WHITE)
+            holder.binding.tvCategory.setBackgroundResource(R.drawable.bg_category_selected)
+            holder.binding.tvCategoryLabel.setTextColor(Color.WHITE)
         } else {
-            holder.binding.root.setBackgroundResource(R.drawable.bg_category_unselected)
-            holder.binding.tvCategoryName.setTextColor(Color.parseColor("#757575"))
+            holder.binding.tvCategory.setBackgroundResource(R.drawable.bg_category_unselected)
+            holder.binding.tvCategoryLabel.setTextColor(Color.parseColor("#757575"))
         }
 
-        holder.binding.root.setOnClickListener {
+        holder.binding.tvCategory.setOnClickListener {
             val prev = selectedPosition
             selectedPosition = holder.adapterPosition
             notifyItemChanged(prev)
